@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runnr Buddy</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+</head>
+<body>
+
+    <!-- Front Page -->
+    <div class="container">
+        <h1>Runnr Buddy</h1>
+        <button onclick="signIn()">Sign In</button>
+        <button onclick="window.location.href='regestraction.html'">Register</button>
+    </div>
+
+    <!-- Sign In Page -->
+    <div class="signin-container">
+        <h2>Runnr Buddy - Sign In</h2>
+        <form>
+            <input type="tel" placeholder="Mobile Number" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <p><a href="#">Forgot Password?</a></p>
+        <div class="signup-link">
+            <p>Don't have an account? <a href="#" onclick="showRegister()">Sign Up Here</a></p>
+        </div>
+    </div>
+
+   
+
+    <!-- KYC Details Page -->
+    <div class="kyc-container">
+        <h2>Runnr Buddy - KYC Details</h2>
+        <form>
+            <input type="text" placeholder="Aadhar Number" required>
+            <input type="text" placeholder="Bank Name" required>
+            <input type="text" placeholder="Account Number" required>
+            <input type="text" placeholder="IFSC Code" required>
+            <input type="text" placeholder="PAN" required>
+            <button type="button" onclick="proceedToConfirmPass()">Proceed</button>
+        </form>
+    </div>
+
+    <!-- Confirm Password Page -->
+    <div class="confirm-pass-container">
+        <h2>Runnr Buddy - Confirm Password</h2>
+        <form onsubmit="handleConfirmPassword(event)">
+            <input type="password" placeholder="Choose Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Proceed</button>
+        </form>
+    </div>
+
+    <!-- Mobile Verification Page -->
+    <div class="mobile-verification-container">
+        <h2>Runnr Buddy - Mobile Verification</h2>
+        <form onsubmit="handleMobileVerification(event)">
+            <input type="tel" placeholder="Mobile Number" required>
+            <button type="button" onclick="sendOTP()">Send OTP</button>
+        </form>
+    </div>
+
+    <!-- Verification Code Page -->
+    <div class="verification-code-container">
+        <h2>Runnr Buddy - Verification Code</h2>
+        <p>Enter OTP sent to: <span id="otpRecipient"></span></p>
+       
+        <form onsubmit="handleVerificationCode(event)">
+            <input type="text" placeholder="Enter Verification Code" required>
+            <button type="submit">Verify</button>
+        </form>
+        <button onclick="changeNumber()">Change Number</button>
+        
+        <p>If you did not receive the OTP, <a href="#" onclick="resendOTP()">Resend OTP</a>.</p>
+    </div>
+    <script src="Script.js"></script>
+
+</body>
+</html>
